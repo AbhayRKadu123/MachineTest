@@ -1,0 +1,39 @@
+<%- layout('boilerplate') %>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Edit Employee</h1>
+    <form action="/edit/<%= employee._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" value="<%= employee.name %>" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" value="<%= employee.email %>" required>
+        </div>
+        <div class="form-group">
+            <label for="mobile">Mobile</label>
+            <input type="text" class="form-control" id="mobile" name="mobile" value="<%= employee.mobile %>" required>
+        </div>
+        <div class="form-group">
+            <label for="designation">Designation</label>
+            <input type="text" class="form-control" id="designation" name="designation" value="<%= employee.designation %>" required>
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select class="form-control" id="gender" name="gender" required>
+                <option value="M" <%= employee.gender === 'M' ? 'selected' : '' %>>Male</option>
+                <option value="F" <%= employee.gender === 'F' ? 'selected' : '' %>>Female</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="courses">Courses</label>
+            <input type="text" class="form-control" id="courses" name="courses" value="<%= employee.courses.join(', ') %>" required>
+        </div>
+        <div class="form-group">
+            <label for="imgUpload">Image Upload</label>
+            <input type="file" class="form-control" id="imgUpload" name="imgUpload">
+        </div>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+</div>

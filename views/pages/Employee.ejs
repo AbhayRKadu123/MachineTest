@@ -1,0 +1,62 @@
+<%- layout('boilerplate') %>
+<form method="post" action="/createemployee" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input name="name" type="text" class="form-control" id="name" placeholder="Enter your name" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input name="email" type="email" class="form-control" id="email" placeholder="Enter your email" required>
+    </div>
+
+    <div class="form-group">
+        <label for="mobile">Mobile No</label>
+        <input name="mobile" type="tel" class="form-control" id="mobile" placeholder="Enter your mobile number" required>
+    </div>
+
+    <div class="form-group">
+        <label for="designation">Designation</label>
+        <select name="designation" class="form-control" id="designation" required>
+            <option value="">Select designation</option>
+            <option value="HR">HR</option>
+            <option value="Manager">Manager</option>
+            <option value="Sales">Sales</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Gender</label><br>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="male" value="M" required>
+            <label class="form-check-label" for="male">Male</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="female" value="F" required>
+            <label class="form-check-label" for="female">Female</label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Course</label><br>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="courses" id="mca" value="MCA">
+            <label class="form-check-label" for="mca">MCA</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="courses" id="bca" value="BCA">
+            <label class="form-check-label" for="bca">BCA</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="courses" id="bsc" value="BSC">
+            <label class="form-check-label" for="bsc">BSC</label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="imgUpload">Image Upload</label>
+        <input type="file" class="form-control-file" name="imgUpload" id="imgUpload" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
